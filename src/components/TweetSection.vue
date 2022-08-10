@@ -2,7 +2,7 @@
     <div>
         <button>Change tweet</button>
         <div class="tweet_card">
-
+            
         </div>
     </div>
 </template>
@@ -11,16 +11,19 @@
     export default {
 
         mounted () {
-            let button = document.querySelector(`button`);
-            button.addEventListener(`click`, this.injectTweet)
+            let tweet_card = document.querySelector(`.tweet_card`);
+            tweet_card.insertAdjacentHTML(`beforeend`,
+            `
+            <p>${this.data[0][`user`]}</p>
+            `)
         },
 
-methods: {
-    injectTweet() {
-        let tweet_card = document.getElementsByClassName(`tweet_card`);
-        tweet_card
-    }
-},
+        methods: {
+            injectTweet() {
+
+                
+            }
+        },
 
         data() {
             return [{
