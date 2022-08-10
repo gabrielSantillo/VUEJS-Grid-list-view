@@ -1,7 +1,6 @@
 <template>
     <div >
-        <button class="button_column">Change column</button>
-        <button class="button_row">Change Row</button>
+        <button class="button_column">Change Grid</button>
         <div class="tweet_card">
             
         </div>
@@ -37,12 +36,16 @@
             </div>
             `)
             }
-            
-            let button = document.querySelector(`.button_column`);
-            button.addEventListener(`click`, this.changeGrid)
 
-            let button_row = document.querySelector(`.button_row`);
-            button_row.addEventListener(`click`, this.changeGridRow)
+            if(this.tweets_array[0][`isDisplay`]) {
+                let button = document.querySelector(`.button_column`);
+                button.addEventListener(`click`, this.changeGrid);
+                this.tweets_array[0][`isDisplay`] = !this.tweets_array[0][`isDisplay`];
+            } else {
+                let button = document.querySelector(`.button_column`);
+                button.addEventListener(`click`, this.changeGridRow);
+                this.tweets_array[0][`isDisplay`] = !this.tweets_array[0][`isDisplay`];
+            }            
         },
 
         data() {
@@ -52,7 +55,8 @@
             {
                 user: `Gabriel`,
                 tweet: `hello`,
-                date: new Date()
+                date: new Date(),
+                isDisplay: false
             },
 
             {
