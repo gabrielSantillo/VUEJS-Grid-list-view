@@ -37,14 +37,13 @@
             `)
             }
 
+            let button = document.querySelector(`.button_column`);
             if(this.tweets_array[0][`isDisplay`]) {
-                let button = document.querySelector(`.button_column`);
-                button.addEventListener(`click`, this.changeGrid);
                 this.tweets_array[0].isDisplay = false;
+                button.addEventListener(`click`, this.changeGrid);
             } else {
-                let button = document.querySelector(`.button_column`);
-                button.addEventListener(`click`, this.changeGridRow);
                 this.tweets_array[0].isDisplay = true;
+                button.addEventListener(`click`, this.changeGridRow);
             }            
         },
 
