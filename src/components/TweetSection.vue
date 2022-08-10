@@ -1,6 +1,7 @@
 <template>
     <div >
-        <button>Change view</button>
+        <button class="button_column">Change column</button>
+        <button class="button_row">Change Row</button>
         <div class="tweet_card">
             
         </div>
@@ -15,6 +16,12 @@
                 let tweet_card = document.querySelector(`.tweet_card`);
                 tweet_card[`style`][`display`] = `grid`
                 tweet_card[`style`][`grid-auto-flow`] = `column`
+            },
+
+            changeGridRow() {
+                let tweet_card = document.querySelector(`.tweet_card`);
+                tweet_card[`style`][`display`] = `grid`
+                tweet_card[`style`][`grid-auto-flow`] = `row`
             }
         },
 
@@ -31,8 +38,11 @@
             `)
             }
             
-            let button = document.querySelector(`button`);
+            let button = document.querySelector(`.button_column`);
             button.addEventListener(`click`, this.changeGrid)
+
+            let button_row = document.querySelector(`.button_row`);
+            button_row.addEventListener(`click`, this.changeGridRow)
         },
 
         data() {
