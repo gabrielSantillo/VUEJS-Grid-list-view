@@ -40,11 +40,11 @@
             if(this.tweets_array[0][`isDisplay`]) {
                 let button = document.querySelector(`.button_column`);
                 button.addEventListener(`click`, this.changeGrid);
-                this.tweets_array[0][`isDisplay`] = !this.tweets_array[0][`isDisplay`];
+                this.tweets_array[0].isDisplay = false;
             } else {
                 let button = document.querySelector(`.button_column`);
                 button.addEventListener(`click`, this.changeGridRow);
-                this.tweets_array[0][`isDisplay`] = !this.tweets_array[0][`isDisplay`];
+                this.tweets_array[0].isDisplay = true;
             }            
         },
 
@@ -56,7 +56,7 @@
                 user: `Gabriel`,
                 tweet: `hello`,
                 date: new Date(),
-                isDisplay: false
+                isDisplay: true
             },
 
             {
